@@ -1,3 +1,6 @@
+html {
+	background-color: rgb(63, 81, 181);
+}
 .gallary {
 	background-color: rgb(63,81,181);
 }
@@ -7,7 +10,7 @@
 	margin: auto;
     margin-bottom: 1em;
     margin-top: 1em;
-
+	border-radius: 10px;
 }
 .gallaryCard:hover {
 	cursor: pointer;

@@ -1,19 +1,10 @@
 {
-  "name": "today_in_history",
-  "version": "1.0.0",
+  "name": "historewind_material",
+  "version": "0.0.1",
   "description": "This website inform you about most famous incidents occured in history on present date.",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikhilsangwan007/todayInHistory.git"
+    "url": "git+https://github.com/addiittya2006/historewind_material.git"
   },
-  "author": "Nikhil Sangwan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nikhilsangwan007/todayInHistory/issues"
-  },
-  "homepage": "https://github.com/nikhilsangwan007/todayInHistory#readme"
+  "author": "Nikhil Sangwan"
 }
