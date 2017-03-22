@@ -14,3 +14,6 @@
 .menuIcon {
 	float: right;
 }
+::-webkit-scrollbar {
+display: none;
+}
