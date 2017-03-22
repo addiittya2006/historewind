@@ -1,20 +1,19 @@
-html {
-	background-color: rgb(63, 81, 181);
-}
 .gallary {
-	background-color: rgb(63,81,181);
+	background-color: #3F51B5;
 }
 .gallaryCard {
 	height: auto;
-	width: 600px;
+	width: auto;
+	max-width: 600px;
 	margin: auto;
     margin-bottom: 1em;
     margin-top: 1em;
-	border-radius: 10px;
+	border-radius: 3px;
+}
+.gallary img {
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
 }
 .gallaryCard:hover {
 	cursor: pointer;
-}
-md-tab {
-	display: inline-flex;
 }

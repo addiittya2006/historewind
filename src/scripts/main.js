@@ -1,1 +1,1 @@
-angular.module('app', ['ngMaterial', 'ngMdIcons']);
+angular.module('app', ['ngMaterial', 'ngMdIcons', 'toolbarCtrl', 'homeCtrl']);
