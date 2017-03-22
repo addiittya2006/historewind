@@ -1,0 +1,16 @@
+.toolbar {
+	background: blue;
+}
+.toolbar span {
+	margin: auto;
+	color: white;
+	font-family: monospace;
+	font-weight: bold;
+}
+.spacer {
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
+}
+.menuIcon {
+	float: right;
+}
