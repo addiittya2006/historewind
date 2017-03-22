@@ -12,8 +12,14 @@ angular.module('toolbarCtrl', [])
     			fullscreen: $scope.customFullscreen
 			});
 			function colorDialog ($scope, datatopass) { 
-			    $scope.projectData = datatopass;  
-				console.log($scope.projectData);
+			    // $scope.projectData = datatopass;  
+				$scope.changeBackground = function(color) {
+					console.log('enter' + color);
+					angular.element(document.querySelector('html')).css('background', color);
+					angular.element(document.querySelector('.toolbar')).css('background', color);
+					angular.element(document.querySelector('.gallary')).css('background', color);
+
+				}
 			}
 		}
 
