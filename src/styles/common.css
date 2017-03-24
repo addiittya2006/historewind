@@ -1,5 +1,14 @@
+/*html {*/
+/*	background-color: #3F51B5;*/
+/*}*/
 html {
-	background-color: #3F51B5;
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
 }
 body.modal-open {
 	overflow: hidden;
