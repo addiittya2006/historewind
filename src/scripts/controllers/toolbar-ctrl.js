@@ -11,6 +11,7 @@ angular.module('toolbarCtrl', [])
 				clickOutsideToClose:true,
     			fullscreen: $scope.customFullscreen
 			});
+			$('.colorDialog').addClass('modal-open');
 			function colorDialog ($scope, datatopass) { 
 			    // $scope.projectData = datatopass;  
 				$scope.changeBackground = function(color) {
@@ -26,5 +27,6 @@ angular.module('toolbarCtrl', [])
 		// CLOSE MODEL
 		$scope.cancel =function() {
 			$mdDialog.cancel();
+			$('.colorDialog').removeClass('modal-open');
 		}
 	}])
