@@ -1,9 +1,11 @@
 angular.module('toolbarCtrl', [])
 	.controller('toolbarCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog) {
+
 		// SHOW DIALOG MODEL
 		$scope.showModel = function(items) {
+			$('body').addClass('modal-open');
 			// $scope.projectData = items;
-			$mdDialog.show({
+			var modalInstance = $mdDialog.show({
 				locals: {datatopass: items},
 				controller: colorDialog,
 				templateUrl: './src/templates/colorDialog.html',
@@ -11,29 +13,25 @@ angular.module('toolbarCtrl', [])
 				clickOutsideToClose:true,
 				fullscreen: $scope.customFullscreen
 			});
-			$('body').addClass('modal-open');
-			console.log('enter')
+			console.log(modalInstance);
+			modalInstance.then(function(){
+				angular.element( $document[0].body).removeClass('modal-open');
+			}, function() {
+				console.log('scrolling enable');
+				$('body').removeClass('modal-open');
+			});
+
 			function colorDialog ($scope, datatopass) { 
 				$scope.changeBackground = function(color) {
-					// angular.element($0).css('background-color', color);
-					// console.log($scope.html);
-					// var appElement = document.querySelector('[ng-app=app]');
-					// var appScope = angular.element(appElement).scope();
-					// var controllerScope = appScope.$$childHead;
-					// console.log(controllerScope);
-					// angular.element(document.querySelector('html')).css('background', color);
-					// angular.element(document.querySelector('html'))[0].style.backgroundColor = "red";
-					// console.log(angular.element(document.querySelector('[ng-app=app]')).scope());
 					angular.element(document.querySelector('.toolbar')).css('background', color);
 					angular.element(document.querySelector('.gallery')).css('background', color);
-
 				}
 			}
 		}
 
 		// CLOSE MODEL
-		$scope.cancel =function() {
-			$mdDialog.cancel();
-			$('body').removeClass('modal-open');
-		}
+		// $scope.cancel =function() {
+		// 	$mdDialog.cancel();
+		// 	$('body').removeClass('modal-open');
+		// }
 	}])
