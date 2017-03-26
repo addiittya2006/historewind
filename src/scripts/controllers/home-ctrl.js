@@ -10,7 +10,17 @@ angular.module('homeCtrl', [])
 		var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 		$scope.date = new Date();
 		var todayDate = months[$scope.date.getMonth()] + '_' + $scope.date.getDate();
-		
+		var time = $scope.date.getHours() + ':' + $scope.date.getMinutes() + ':' + $scope.date.getSeconds();
+		var phase = 8 < $scope.date.getHours() < 6 ? 'AM' : 'PM';
+		var fullTime = time + ':' + phase;
+
+		// between 8AM and 6PM
+		if ( $scope.date.getHours() >= 8 && $scope.date.getHours() <= 18) {
+			console.log('morning digest');
+		}else {
+			console.log('evening digest');
+		}
+		console.log(fullTime);
 		dataService.getData(todayDate)
 			.success(function(res, status, header, scope) {
 				$scope.loaded = true;
