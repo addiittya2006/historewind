@@ -1,5 +1,5 @@
 angular.module('homeCtrl', [])
-	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', 'dataService', function($scope, $timeout, $mdDialog, $mdToast, dataService) {
+	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$sce', 'dataService', function($scope, $timeout, $mdDialog, $mdToast, $sce, dataService) {
 		
 		// start spinner
 		$scope.loaded = false;
@@ -23,9 +23,17 @@ angular.module('homeCtrl', [])
 		console.log(fullTime);
 		dataService.getData(todayDate)
 			.success(function(res, status, header, scope) {
+
+				$scope.births = res.births;
+				$scope.deaths = res.deaths;
+				$scope.events = res.events;
+				
 				$scope.loaded = true;
 				$mdDialog.hide('.spinner');
-				console.log(res);
+
+				console.log($scope.births);
+				console.log($scope.deaths);
+				console.log($scope.events);
 			})
 			.error(function() {
 				$timeout(function() {

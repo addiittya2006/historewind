@@ -1,1 +1,1 @@
-angular.module('app', ['ngMaterial', 'ngMdIcons', 'toolbarCtrl', 'homeCtrl', 'networkErrorToastCtrl', 'dataService']);
+angular.module('app', ['ngMaterial', 'ngMdIcons', 'toolbarCtrl', 'homeCtrl', 'networkErrorToastCtrl', 'dataService', 'birthDirective', 'deathDirective', 'eventDirective']);

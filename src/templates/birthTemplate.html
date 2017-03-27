@@ -1,0 +1,15 @@
+<section>
+	<md-card class="galleryCard" ng-repeat="(key, value) in births track by $index">
+		<img src="./src/images/img1.jpg">
+		<md-card-title>
+			<md-card-title-text >
+				<span class="md-headline">{{key}}</span>
+			</md-card-title-text>
+		</md-card-title>
+		<md-card-content class="md-padding">
+			<p>
+				{{value}}
+			</p>
+		</md-card-content>
+	</md-card>
+</section>
