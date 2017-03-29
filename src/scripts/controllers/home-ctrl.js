@@ -1,10 +1,13 @@
 angular.module('homeCtrl', [])
 
-	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, tagFilter, morningService, eveningService) {
+	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService) {
 		
 		// start spinner
 		$scope.loaded = false;
 		$mdDialog.show({
+			targetEvent: event,
+			bindToController: true,
+			clickOutsideToClose: false,
 			templateUrl: './src/templates/spinnerDialog.html'
 		});
 
@@ -24,11 +27,8 @@ angular.module('homeCtrl', [])
 				$scope.births = res.births;
 				$scope.deaths = res.deaths;
 				$scope.events = res.events;
-				
-				$scope.loaded = true;
-				$mdDialog.hide('.spinner');
 			})
-			.error(function() {
+			.catch(function(err) {
 				$timeout(function() {
 					$mdToast.show({
 						hideDelay: 99999999999,
@@ -37,21 +37,21 @@ angular.module('homeCtrl', [])
 						controller: 'networkErrorToastCtrl'
 					})
 				}, 2000);
-				console.log('error occured');
+				console.log('error occured : ' + err);
 			})
+			.finally(function() {
+				$scope.loaded = true;
+				$mdDialog.hide('.spinner');
+			});
 		}else {
 			console.log('evening digest');
 			eveningService.getData(todayDate)
 			.success(function(res, status, header, scope) {
-
 				$scope.births = res.births;
 				$scope.deaths = res.deaths;
 				$scope.events = res.events;
-				
-				$scope.loaded = true;
-				$mdDialog.hide('.spinner');
 			})
-			.error(function() {
+			.catch(function(err) {
 				$timeout(function() {
 					$mdToast.show({
 						hideDelay: 99999999999,
@@ -60,8 +60,13 @@ angular.module('homeCtrl', [])
 						controller: 'networkErrorToastCtrl'
 					})
 				}, 2000);
-				console.log('error occured');
+				console.log('error occured : ' + err);
 			})
+			.finally(function() {
+				$scope.loaded = true;
+				$mdDialog.hide('.spinner');
+				console.log('spinner stops');
+			});
 		}
 		console.log(fullTime);
 	}])
