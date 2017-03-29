@@ -1,14 +1,14 @@
 <section>
-	<md-card class="galleryCard">
-		<img src="./src/images/img2.jpg">
-		<md-card-title>
-			<md-card-title-text>
-				<span class="md-headline">Legend was born today</span>
+	<md-card class="galleryCard" ng-repeat="items in deaths">
+		<img src={{items.thumb}}>
+		<md-card-title class="cardTitle">
+			<md-card-title-text class="cardTitleText">
+				<span class="md-headline">{{items.year}}</span>
 			</md-card-title-text>
 		</md-card-title>
-		<md-card-content class="md-padding">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.
+		<md-card-content class="md-padding cardDesc">
+			<p ng-bind-html="items.desc | tag" compile-template>
+				<!-- {{items.desc}} -->
 			</p>
 		</md-card-content>
 	</md-card>

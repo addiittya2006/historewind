@@ -1,7 +1,7 @@
 /*html {*/
 /*	background-color: #3F51B5;*/
 /*}*/
-html {
+/*html {
     overflow: hidden;
     height: 100%;
 }
@@ -9,12 +9,14 @@ html {
 body {
     height: 100%;
     overflow: auto;
-}
+}*/
 body.modal-open {
 	overflow: hidden;
 }
 hr {
 	width: 40%;
+	margin-top: 2em;
+	margin-bottom: 2em;
 }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -23,7 +25,7 @@ hr {
 	outline: none;
 }
 ::-webkit-scrollbar {
-display: none;
+	display: none;
 }
 
 .spinner {

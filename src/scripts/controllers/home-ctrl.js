@@ -1,5 +1,6 @@
 angular.module('homeCtrl', [])
-	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$sce', 'dataService', function($scope, $timeout, $mdDialog, $mdToast, $sce, dataService) {
+
+	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', 'tagFilter', 'dataService', function($scope, $timeout, $mdDialog, $mdToast, tagFilter, dataService) {
 		
 		// start spinner
 		$scope.loaded = false;
@@ -30,10 +31,6 @@ angular.module('homeCtrl', [])
 				
 				$scope.loaded = true;
 				$mdDialog.hide('.spinner');
-
-				console.log($scope.births);
-				console.log($scope.deaths);
-				console.log($scope.events);
 			})
 			.error(function() {
 				$timeout(function() {
