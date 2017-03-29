@@ -1,6 +1,6 @@
 angular.module('homeCtrl', [])
 
-	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', 'tagFilter', 'dataService', function($scope, $timeout, $mdDialog, $mdToast, tagFilter, dataService) {
+	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, tagFilter, morningService, eveningService) {
 		
 		// start spinner
 		$scope.loaded = false;
@@ -18,11 +18,7 @@ angular.module('homeCtrl', [])
 		// between 8AM and 6PM
 		if ( $scope.date.getHours() >= 8 && $scope.date.getHours() <= 18) {
 			console.log('morning digest');
-		}else {
-			console.log('evening digest');
-		}
-		console.log(fullTime);
-		dataService.getData(todayDate)
+			morningService.getData(todayDate)
 			.success(function(res, status, header, scope) {
 
 				$scope.births = res.births;
@@ -43,4 +39,29 @@ angular.module('homeCtrl', [])
 				}, 2000);
 				console.log('error occured');
 			})
+		}else {
+			console.log('evening digest');
+			eveningService.getData(todayDate)
+			.success(function(res, status, header, scope) {
+
+				$scope.births = res.births;
+				$scope.deaths = res.deaths;
+				$scope.events = res.events;
+				
+				$scope.loaded = true;
+				$mdDialog.hide('.spinner');
+			})
+			.error(function() {
+				$timeout(function() {
+					$mdToast.show({
+						hideDelay: 99999999999,
+						templateUrl: './src/templates/networkErrorToast.html',
+						position: 'bottom center',
+						controller: 'networkErrorToastCtrl'
+					})
+				}, 2000);
+				console.log('error occured');
+			})
+		}
+		console.log(fullTime);
 	}])

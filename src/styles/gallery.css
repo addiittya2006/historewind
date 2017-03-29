@@ -17,14 +17,24 @@ a {
 	border-radius: 3px;
 }
 .cardTitle {
-	padding: 10px;
+	position: relative;
+	padding: 1em;
+	padding-bottom: 5px;
 	font-family: sans-serif;
 }
 .cardTitleText {
 	color: #424242;
 	font-weight: bolder !important;
 }
+.cardTitleText span {
+	font-weight: bolder !important;
+}
+.cardDesc {
+	padding: 1em;
+	padding-top: 5px;
+}
 .gallery img {
+	width: 100%;
 	height: 300px;
 	object-fit: cover;
 	border-top-right-radius: 3px;
