@@ -3,12 +3,17 @@ angular.module('homeCtrl', [])
 	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService) {
 		
 		// start spinner
+		console.log('spinner start');
 		$scope.loaded = false;
 		$mdDialog.show({
 			targetEvent: event,
 			bindToController: true,
 			clickOutsideToClose: false,
 			templateUrl: './src/templates/spinnerDialog.html'
+		});
+		$('a').attr('href', function(i, href) {
+			console.log(href);
+			return 'https://en.wekipedia.org/' + href;
 		});
 
 		var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
