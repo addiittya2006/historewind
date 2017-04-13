@@ -13,7 +13,6 @@ angular.module('toolbarCtrl', [])
 				clickOutsideToClose:true,
 				fullscreen: $scope.customFullscreen
 			});
-			console.log(modalInstance);
 			modalInstance.then(function(){
 				angular.element( $document[0].body).removeClass('modal-open');
 			}, function() {

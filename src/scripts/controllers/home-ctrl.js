@@ -3,7 +3,6 @@ angular.module('homeCtrl', [])
 	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService) {
 		
 		// start spinner
-		console.log('spinner start');
 		$scope.loaded = false;
 		$mdDialog.show({
 			targetEvent: event,
@@ -27,13 +26,11 @@ angular.module('homeCtrl', [])
 		if ( $scope.date.getHours() >= 8 && $scope.date.getHours() <= 18) {
 			console.log('morning digest');
 			morningService.getData(todayDate)
-			.success(function(res, status, header, scope) {
-
-				$scope.births = res.births;
-				$scope.deaths = res.deaths;
-				$scope.events = res.events;
-			})
-			.catch(function(err) {
+			.then(function(res, status, header, scope) {
+				$scope.births = res.data.births;
+				$scope.deaths = res.data.deaths;
+				$scope.events = res.data.events;
+			}, function errorCallback(err) {
 				$timeout(function() {
 					$mdToast.show({
 						hideDelay: 99999999999,
@@ -42,7 +39,7 @@ angular.module('homeCtrl', [])
 						controller: 'networkErrorToastCtrl'
 					})
 				}, 2000);
-				console.log('error occured : ' + err);
+				console.log(err);
 			})
 			.finally(function() {
 				$scope.loaded = true;
@@ -51,12 +48,11 @@ angular.module('homeCtrl', [])
 		}else {
 			console.log('evening digest');
 			eveningService.getData(todayDate)
-			.success(function(res, status, header, scope) {
-				$scope.births = res.births;
-				$scope.deaths = res.deaths;
-				$scope.events = res.events;
-			})
-			.catch(function(err) {
+			.then(function(res, status, header, scope) {
+				$scope.births = res.data.births;
+				$scope.deaths = res.data.deaths;
+				$scope.events = res.data.events;
+			}, function errorCallback(err) {
 				$timeout(function() {
 					$mdToast.show({
 						hideDelay: 99999999999,
@@ -65,7 +61,7 @@ angular.module('homeCtrl', [])
 						controller: 'networkErrorToastCtrl'
 					})
 				}, 2000);
-				console.log('error occured : ' + err);
+				console.log(err);
 			})
 			.finally(function() {
 				$scope.loaded = true;
