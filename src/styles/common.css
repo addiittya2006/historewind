@@ -29,8 +29,10 @@ hr {
 }
 
 .spinner {
-	min-width: 10px;
-	background: transparent;
+	min-width: 20px;
+	padding: 5px;
+	background: white;
+	border-radius: 999px;
 	-webkit-box-shadow: none;
 	-ms-box-shadow: none;
 	box-shadow: none;
