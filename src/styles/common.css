@@ -42,10 +42,4 @@ hr {
 	min-height: 40%;
 	border-radius: 0px;
 }
-.headimgcontainer {
-	width: auto;
-	height: 100px;
-}
-.headimg {
-	object-fit: cover;
-}
+
