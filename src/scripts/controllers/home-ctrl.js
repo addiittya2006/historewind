@@ -23,7 +23,7 @@ angular.module('homeCtrl', [])
 		var fullTime = time + ':' + phase;
 
 		// between 8AM and 6PM
-		if ( $scope.date.getHours() >= 8 && $scope.date.getHours() <= 18) {
+		if ( $scope.date.getHours() >= 0 && $scope.date.getHours() <= 16) {
 			console.log('morning digest');
 			morningService.getData(todayDate)
 			.then(function(res, status, header, scope) {
