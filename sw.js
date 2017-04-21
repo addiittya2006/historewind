@@ -3,9 +3,9 @@
 var cacheName = "histoCache";
 var fileToCache = [
   "./index.html",
-  "/src/styles/common.css",
-  "/src/styles/gallery.css",
-  "/src/styles/toolbar.css"
+  "./src/styles/common.css",
+  "./src/styles/gallery.css",
+  "./src/styles/toolbar.css"
 ];
 
 self.addEventListener("install",  function(event) {
