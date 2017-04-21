@@ -1,13 +1,16 @@
 angular.module('toolbarCtrl', [])
 	.controller('toolbarCtrl', ['$scope', '$rootScope', '$mdDialog', 'headColor', function($scope, $rootScope, $mdDialog, headColor) {
 
+		var setToolbarColor = angular.element(document.querySelector('.toolbar')),
+				setGalleryColor = angular.element(document.querySelector('.gallery'));
+
 		// set default evening color
 		$scope.$on('setDefaultEveningColor', function(event, resp) {
 			$scope.setDefaultEveningColor(resp);
 		});
 		$scope.setDefaultEveningColor = function(color) {
-			angular.element(document.querySelector('.toolbar')).css('background', color);
-			angular.element(document.querySelector('.gallery')).css('background', color);
+			setToolbarColor.css('background', color);
+			setGalleryColor.css('background', color);
 			headColor.setMetaTag({
 				color : color
 			});
@@ -28,13 +31,12 @@ angular.module('toolbarCtrl', [])
 			modalInstance.then(function(){
 				angular.element( $document[0].body).removeClass('modal-open');
 			}, function() {
-				console.log('scrolling enable');
 				$('body').removeClass('modal-open');
 			});
 			function colorDialog ($scope, datatopass) {
 				$scope.changeBackground = function(color) {
-					angular.element(document.querySelector('.toolbar')).css('background', color);
-					angular.element(document.querySelector('.gallery')).css('background', color);
+					setToolbarColor.css('background', color);
+					setGalleryColor.css('background', color);
 					headColor.setMetaTag({
 						color : color
 					});

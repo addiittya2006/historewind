@@ -2,10 +2,10 @@ angular.module('homeCtrl', [])
 
 	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService) {
 
+		// registering serviceWorker
 		if ("serviceWorker" in navigator) {
 			navigator.serviceWorker.register("./sw.js")
 				.then(function(registtation) {
-					console.log("up and running");
 				}).catch(function(err) {
 					console.log(err);
 				});
