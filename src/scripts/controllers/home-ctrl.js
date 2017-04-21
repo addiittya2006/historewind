@@ -32,7 +32,7 @@ angular.module('homeCtrl', [])
 		var fullTime = time + ':' + phase;
 
 		// between 12AM and 4PM
-		if ( $scope.date.getHours() > 0 && $scope.date.getHours() < 16) {
+		if ( $scope.date.getHours() >= 0 && $scope.date.getHours() < 16) {
 			console.log('morning digest');
 			morningService.getData(todayDate)
 			.then(function(res, status, header, scope) {
@@ -76,6 +76,11 @@ angular.module('homeCtrl', [])
 				$scope.loaded = true;
 				$mdDialog.hide('.spinner');
 				console.log('spinner stops');
+				var eveningColor = {
+					"color" : "#9e9e9e"
+				}
+				console.log(evening.color);
+				$rootScope.$emit('setDefaultEveningColor', eveningColor);
 			});
 		}
 
