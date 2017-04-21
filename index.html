@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="app">
-<head>
+<head ng-controller="toolbarCtrl">
 	<title>historewind</title>
 	<meta charset="utf-8">
-	<meta name="theme-color" content="#3f51b5">
+	<!-- <meta name="theme-color" content="#3F51B5"> -->
+	<meta name="theme-color" content="{{ getColor() }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="manifest" href="./manifest.json">

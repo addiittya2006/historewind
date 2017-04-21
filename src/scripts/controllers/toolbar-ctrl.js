@@ -25,6 +25,9 @@ angular.module('toolbarCtrl', [])
 					angular.element(document.querySelector('.toolbar')).css('background', color);
 					angular.element(document.querySelector('.gallery')).css('background', color);
 				}
+				$scope.getColor = function(color) {
+					return color;
+				}
 			}
 		}
 
