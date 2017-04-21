@@ -19,10 +19,10 @@ angular.module('homeCtrl', [])
 			clickOutsideToClose: false,
 			templateUrl: './src/templates/spinnerDialog.html'
 		});
-		$('a').attr('href', function(i, href) {
-			console.log(href);
-			return 'https://en.wekipedia.org/' + href;
-		});
+		// $('a').attr('href', function(i, href) {
+		// 	console.log(href);
+		// 	return 'https://en.wekipedia.org/' + href;
+		// });
 
 		var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 		$scope.date = new Date();
@@ -32,7 +32,7 @@ angular.module('homeCtrl', [])
 		var fullTime = time + ':' + phase;
 
 		// between 12AM and 4PM
-		if ( $scope.date.getHours() >= 0 && $scope.date.getHours() < 16) {
+		if ( $scope.date.getHours() > 0 && $scope.date.getHours() < 16) {
 			console.log('morning digest');
 			morningService.getData(todayDate)
 			.then(function(res, status, header, scope) {

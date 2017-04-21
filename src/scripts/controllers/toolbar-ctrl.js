@@ -1,5 +1,5 @@
 angular.module('toolbarCtrl', [])
-	.controller('toolbarCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog) {
+	.controller('toolbarCtrl', ['$scope', '$mdDialog', 'headColor', function($scope, $mdDialog, headColor) {
 
 		// SHOW DIALOG MODEL
 		$scope.showModel = function(items) {
@@ -20,13 +20,13 @@ angular.module('toolbarCtrl', [])
 				$('body').removeClass('modal-open');
 			});
 
-			function colorDialog ($scope, datatopass) { 
+			function colorDialog ($scope, datatopass) {
 				$scope.changeBackground = function(color) {
 					angular.element(document.querySelector('.toolbar')).css('background', color);
 					angular.element(document.querySelector('.gallery')).css('background', color);
-				}
-				$scope.getColor = function(color) {
-					return color;
+					headColor.setMetaTag({
+						color : color
+					});
 				}
 			}
 		}

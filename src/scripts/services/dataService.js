@@ -16,3 +16,9 @@ angular.module('dataService', [])
 			}
 		}
 	}])
+
+	.service('headColor', function($window) {
+		this.setMetaTag = function( tagData ) {
+			$window.document.getElementsByName('theme-color')[0].content = tagData.color;
+		}
+	})
