@@ -3,7 +3,7 @@
   "short_name": "Historewind",
   "theme_color": "#3f51b5",
   "background_color": "#ffffff",
-  "display": "fullscreen",
+  "display": "minimal-ui",
   "orientation": "portrait",
   "start_url": "/historewind/",
   "icons": [
