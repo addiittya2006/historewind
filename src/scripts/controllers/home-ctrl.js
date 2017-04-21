@@ -1,7 +1,16 @@
 angular.module('homeCtrl', [])
 
 	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService) {
-		
+
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register("./sw.js")
+				.then(function(registtation) {
+					console.log("up and running");
+				}).catch(function(err) {
+					console.log(err);
+				});
+		}
+
 		// start spinner
 		$scope.loaded = false;
 		$mdDialog.show({
@@ -22,8 +31,8 @@ angular.module('homeCtrl', [])
 		var phase = 8 < $scope.date.getHours() < 6 ? 'AM' : 'PM';
 		var fullTime = time + ':' + phase;
 
-		// between 8AM and 6PM
-		if ( $scope.date.getHours() >= 0 && $scope.date.getHours() <= 16) {
+		// between 12AM and 4PM
+		if ( $scope.date.getHours() >= 0 && $scope.date.getHours() < 16) {
 			console.log('morning digest');
 			morningService.getData(todayDate)
 			.then(function(res, status, header, scope) {
@@ -69,5 +78,6 @@ angular.module('homeCtrl', [])
 				console.log('spinner stops');
 			});
 		}
+
 		console.log(fullTime);
 	}])

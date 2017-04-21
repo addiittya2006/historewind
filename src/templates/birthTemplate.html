@@ -1,13 +1,13 @@
 <section>
 	<md-card class="galleryCard" ng-repeat="items in births">
-		<img src={{items.thumb}}>
+		<img ng-src={{items.thumb}}>
 		<md-card-title class="cardTitle">
 			<md-card-title-text class="cardTitleText">
 				<span class="md-headline">{{items.year}}</span>
 			</md-card-title-text>
 		</md-card-title>
 		<md-card-content class="md-padding cardDesc">
-			<p ng-bind-html="items.desc | tag" compile-template>
+			<p ng-bind-html="(items.desc | tag) | anchor" compile-template>
 				<!-- {{items.desc | tag}}  -->
 			</p>
 		</md-card-content>
