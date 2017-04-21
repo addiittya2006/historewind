@@ -1,5 +1,5 @@
 angular.module('toolbarCtrl', [])
-	.controller('toolbarCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog) {
+	.controller('toolbarCtrl', ['$scope', '$rootScope', '$mdDialog', function($scope, $mdDialog) {
 
 		// SHOW DIALOG MODEL
 		$scope.showModel = function(items) {
@@ -24,6 +24,7 @@ angular.module('toolbarCtrl', [])
 				$scope.changeBackground = function(color) {
 					angular.element(document.querySelector('.toolbar')).css('background', color);
 					angular.element(document.querySelector('.gallery')).css('background', color);
+					$rootScope.$brodcast('send', color);
 				}
 			}
 		}

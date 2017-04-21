@@ -1,1 +1,1 @@
-angular.module('app', ['ngMaterial', 'ngAria', 'ngMdIcons', 'toolbarCtrl', 'homeCtrl', 'networkErrorToastCtrl', 'dataService', 'birthDirective', 'deathDirective', 'eventDirective', 'tagFilter', 'anchorFilter']);
+angular.module('app', ['ngMaterial', 'ngAria', 'ngMdIcons', 'toolbarCtrl', 'homeCtrl', 'networkErrorToastCtrl', 'head-ctrl', 'dataService', 'birthDirective', 'deathDirective', 'eventDirective', 'tagFilter', 'anchorFilter']);

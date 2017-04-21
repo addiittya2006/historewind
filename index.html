@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="app">
-<head>
+<head ng-controller="head-ctrl">
 	<title>historewind</title>
 	<meta charset="utf-8">
-	<meta name="theme-color" content="#3f51b5">
+	<!-- <meta name="theme-color" content="#3F51B5"> -->
+	<meta name="theme-color" content=" {{ data }} ">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="manifest" href="./manifest.json">
@@ -62,6 +63,7 @@
 	<script type="text/javascript" src="./src/scripts/controllers/toolbar-ctrl.js"></script>
 	<script type="text/javascript" src="./src/scripts/controllers/home-ctrl.js"></script>
 	<script type="text/javascript" src="./src/scripts/controllers/networkErrorToastCtrl.js"></script>
+	<script type="text/javascript" src="./src/scripts/controllers/head-ctrl.js"></script>
 
 	<!--services-->
 	<script type="text/javascript" src="./src/scripts/services/dataService.js"></script>
