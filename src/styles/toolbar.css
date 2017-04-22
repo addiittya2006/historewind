@@ -19,7 +19,12 @@
 	right: 5px;
 	top: 10px;
 }
-.menuIcon:hover {
+.reloadIcon {
+	position: absolute;
+	right: 40px;
+	top: 10px;
+}
+.menuIcon, .reloadIcon:hover {
 	cursor: pointer;
 }
 .todayDate {

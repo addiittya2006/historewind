@@ -1,5 +1,5 @@
 angular.module('toolbarCtrl', [])
-	.controller('toolbarCtrl', ['$scope', '$rootScope', '$mdDialog', 'headColor', function($scope, $rootScope, $mdDialog, headColor) {
+	.controller('toolbarCtrl', ['$scope', '$rootScope', '$mdDialog', '$window', 'headColor', function($scope, $rootScope, $mdDialog, $window, headColor) {
 
 		var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 		var todayDate = months[$scope.date.getMonth()] + ' ' + $scope.date.getDate();
@@ -12,7 +12,6 @@ angular.module('toolbarCtrl', [])
 		// set default evening color
 		$scope.$on('setDefaultEveningColor', function(event, resp) {
 			$scope.setEveningColor(resp.color);
-			console.log("sdfghjkjfdfjkdsxdjjfd"+resp);
 		});
 		$scope.setEveningColor = function(color) {
 			setToolbarColor.css('background', color);
@@ -50,9 +49,7 @@ angular.module('toolbarCtrl', [])
 			}
 		}
 
-		// CLOSE MODEL
-		// $scope.cancel =function() {
-		// 	$mdDialog.cancel();
-		// 	$('body').removeClass('modal-open');
-		// }
+		$scope.reloadWindow = function() {
+			$window.location.reload();
+		}
 	}])
