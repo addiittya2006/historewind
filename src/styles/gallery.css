@@ -41,4 +41,8 @@ a {
 .cardDesc {
 	padding: 1em;
 	padding-top: 5px;
+	text-align: left;
+}
+.cardDesc p {
+	text-align: left;
 }
