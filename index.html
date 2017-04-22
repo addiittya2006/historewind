@@ -23,6 +23,9 @@
 		<div layout="column" ng-cloak="">
 			<div flex>
 				<md-toolbar class="toolbar" ng-controller="toolbarCtrl">
+					<span class="todayDate">
+						{{date}}
+					</span>
 					<span>
 						<img src="./images/header/header.png"/>
 					</span>
@@ -40,10 +43,17 @@
 			</div>
 			<div flex>
 				<md-content class="md-padding gallery">
+					<span class="headingImg">
+						<img src="./images/events.png" class="headingImg" />
+					</span>
 					<event-directive></event-directive>
-					<hr />
+					<span class="headingImg">
+						<img src="./images/births.png" class="headingImg" />
+					</span>
 					<birth-directive></birth-directive>
-					<hr />
+					<span class="headingImg">
+						<img src="./images/deaths.png" />
+					</span>
 					<death-directive></death-directive>
 				</md-content>
 			</div>

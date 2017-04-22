@@ -27,7 +27,10 @@ hr {
 ::-webkit-scrollbar {
 	display: none;
 }
-
+.headingImg img {
+	height: 30px;
+	object-fit: cover;
+}
 .spinner {
 	min-width: 20px;
 	padding: 5px;
@@ -42,4 +45,3 @@ hr {
 	min-height: 40%;
 	border-radius: 0px;
 }
-

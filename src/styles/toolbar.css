@@ -8,7 +8,7 @@
 }
 .toolbar span img {
 	height: 30px;
-    object-fit: cover;
+  object-fit: cover;
 }
 .spacer {
 	-webkit-box-flex: 1;
@@ -21,4 +21,12 @@
 }
 .menuIcon:hover {
 	cursor: pointer;
+}
+.todayDate {
+	color: white;
+	font-size: 15px;
+	font-family: roboto;
+	position: absolute;
+	left: 5px;
+	top: 5px;
 }
