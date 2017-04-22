@@ -11,9 +11,10 @@ angular.module('toolbarCtrl', [])
 
 		// set default evening color
 		$scope.$on('setDefaultEveningColor', function(event, resp) {
-			$scope.setDefaultEveningColor(resp);
+			$scope.setEveningColor(resp.color);
+			console.log("sdfghjkjfdfjkdsxdjjfd"+resp);
 		});
-		$scope.setDefaultEveningColor = function(color) {
+		$scope.setEveningColor = function(color) {
 			setToolbarColor.css('background', color);
 			setGalleryColor.css('background', color);
 			headColor.setMetaTag({

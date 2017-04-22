@@ -73,14 +73,14 @@ angular.module('homeCtrl', [])
 				console.log(err);
 			})
 			.finally(function() {
+				var eveningColor = {
+					"color" : "#9E9E9E"
+				}
+				// console.log(eveningColor.color);
+				$rootScope.$broadcast('setDefaultEveningColor', eveningColor);
 				$scope.loaded = true;
 				$mdDialog.hide('.spinner');
 				console.log('spinner stops');
-				var eveningColor = {
-					"color" : "#9e9e9e"
-				}
-				console.log(evening.color);
-				$rootScope.$emit('setDefaultEveningColor', eveningColor);
 			});
 		}
 
