@@ -1,5 +1,5 @@
 angular.module('toolbarCtrl', [])
-	.controller('toolbarCtrl', ['$scope', '$rootScope', '$mdDialog', '$window', 'headColor', function($scope, $rootScope, $mdDialog, $window, headColor) {
+	.controller('toolbarCtrl', ['$scope', '$rootScope', '$mdDialog', 'headColor', function($scope, $rootScope, $mdDialog, $window, headColor) {
 
 		var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 		var todayDate = months[$scope.date.getMonth()] + ' ' + $scope.date.getDate();
@@ -49,7 +49,7 @@ angular.module('toolbarCtrl', [])
 			}
 		}
 
-		$scope.reloadWindow = function() {
-			$window.location.reload();
-		}
+		// $scope.reloadWindow = function() {
+			// $window.location.reload();
+		// }
 	}])

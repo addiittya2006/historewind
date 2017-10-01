@@ -18,15 +18,16 @@
 	position: absolute;
 	right: 5px;
 	top: 10px;
-}
-.reloadIcon {
-	position: absolute;
-	right: 40px;
-	top: 10px;
-}
-.menuIcon, .reloadIcon:hover {
 	cursor: pointer;
 }
+/* .reloadIcon { */
+	/* position: absolute; */
+	/* right: 40px; */
+	/* top: 10px; */
+/* } */
+/* .reloadIcon:hover { */
+	/* cursor: pointer; */
+/* } */
 .todayDate {
 	color: white;
 	font-size: 15px;
