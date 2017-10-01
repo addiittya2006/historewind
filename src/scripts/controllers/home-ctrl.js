@@ -1,6 +1,6 @@
 angular.module('homeCtrl', [])
 
-	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService) {
+	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService, event) {
 
 		// registering serviceWorker
 		if ("serviceWorker" in navigator) {
