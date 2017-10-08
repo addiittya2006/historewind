@@ -21,4 +21,7 @@ angular.module('dataService', [])
 		this.setMetaTag = function( tagData ) {
 			$window.document.getElementsByName('theme-color')[0].content = tagData.color;
 		}
+		this.setMetaTag = function( tagData ) {
+			$window.document.getElementsByName('apple-mobile-web-app-status-bar-style')[0].content = tagData.color;
+		}
 	})
