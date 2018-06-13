@@ -1,2 +1,3 @@
-# historewind
-This website inform you about most famous incidents occured in history on present date.
+## historewind
+This website provides a short digest or zine both in the morning and in the evening highlighting the most significant events in history on the current date based on the average sum of the wiki-page-rank(based on the outgoing links and references) for the links in the description of the event.
+Each zine compiles 10 most significant events, births and deaths each in the morning and in the evening.

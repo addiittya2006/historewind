@@ -3,7 +3,7 @@ angular.module('dataService', [])
 	.factory('morningService', ['$http', function($http) {
 		return {
 			getData: function(todayDate) {
-				return $http.get('https://history.addiittya.xyz/' + todayDate + '/morn_digest.json');
+				return $http.get('https://history.aditya.science/' + todayDate + '/morn_digest.json');
 				// return todayDate;
 			}
 		}
@@ -12,7 +12,7 @@ angular.module('dataService', [])
 	.factory('eveningService', ['$http', function($http) {
 		return {
 			getData: function(todayDate) {
-				return $http.get('https://history.addiittya.xyz/' + todayDate + '/eve_digest.json')
+				return $http.get('https://history.aditya.science/' + todayDate + '/eve_digest.json')
 			}
 		}
 	}])

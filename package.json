@@ -4,7 +4,7 @@
   "description": "This website inform you about most famous incidents occured in history on present date.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/addiittya2006/historewind_material.git"
+    "url": "git+https://github.com/addiittya2006/historewind.git"
   },
-  "author": "Nikhil Sangwan"
+  "author": "Aditya"
 }
