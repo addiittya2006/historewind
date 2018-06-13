@@ -9,27 +9,27 @@
   "start_url": "/historewind/",
   "icons": [
     {
-		"src": "images/icons/launcher-icon-1x.png",
+		"src": "res/icons/launcher-icon-1x.png",
 		"type": "image/png",
 		"sizes": "48x48"
     },
     {
-		"src": "images/icons/launcher-icon-2x.png",
+		"src": "res/icons/launcher-icon-2x.png",
 		"type": "image/png",
 		"sizes": "96x96"
     },
     {
-		"src": "images/icons/launcher-icon-4x.png",
+		"src": "res/icons/launcher-icon-4x.png",
 		"type": "image/png",
 		"sizes": "192x192"
 	},
 	{
-		"src": "images/icons/touch/ms-touch-icon-144x144-precomposed.png",
+		"src": "res/icons/touch/ms-touch-icon-144x144-precomposed.png",
 		"type": "image/png",
 		"sizes": "144x144"
 	},
 	{
-		"src": "images/icons/touch/chrome-touch-icon-192x192.png",
+		"src": "res/icons/touch/chrome-touch-icon-192x192.png",
 		"type": "image/png",
 		"sizes": "192x192"
     }

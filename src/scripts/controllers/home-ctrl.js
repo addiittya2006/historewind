@@ -54,7 +54,7 @@ angular.module('homeCtrl', [])
 				$scope.loaded = true;
 				$mdDialog.hide('.spinner');
 			});
-		}else {
+		} else {
 			console.log('evening digest');
 			eveningService.getData(todayDate)
 			.then(function(res, status, header, scope) {
