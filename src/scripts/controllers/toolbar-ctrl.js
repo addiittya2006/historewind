@@ -4,7 +4,7 @@ angular.module('toolbarCtrl', [])
 		var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 		var todayDate = months[$scope.date.getMonth()] + ' ' + $scope.date.getDate();
 		$scope.date = todayDate;
-		console.log($scope.date);
+		// console.log($scope.date);
 
 		var setToolbarColor = angular.element(document.querySelector('.toolbar')),
 				setGalleryColor = angular.element(document.querySelector('.gallery'));
@@ -48,8 +48,4 @@ angular.module('toolbarCtrl', [])
 				}
 			}
 		}
-
-		// $scope.reloadWindow = function() {
-			// $window.location.reload();
-		// }
 	}])

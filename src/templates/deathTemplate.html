@@ -6,10 +6,7 @@
 				<span class="md-headline">{{items.year}}</span>
 			</md-card-title-text>
 		</md-card-title>
-		<md-card-content class="md-padding cardDesc">
-			<p ng-bind-html="items.desc | tag" compile-template>
-				<!-- {{items.desc}} -->
-			</p>
+		<md-card-content class="md-padding cardDesc" ng-bind-html="items.desc | anchor" compile-template>
 		</md-card-content>
 	</md-card>
 </section>

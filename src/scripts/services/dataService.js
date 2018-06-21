@@ -4,7 +4,6 @@ angular.module('dataService', [])
 		return {
 			getData: function(todayDate) {
 				return $http.get('https://history.aditya.science/' + todayDate + '/morn_digest.json');
-				// return todayDate;
 			}
 		}
 	}])
@@ -22,6 +21,4 @@ angular.module('dataService', [])
 			$window.document.getElementsByName('theme-color')[0].content = tagData.color;
 			$window.document.getElementsByName('apple-mobile-web-app-status-bar-style')[0].content = tagData.color;			
 		}
-		// this.setMetaTag = function( tagData ) {
-		// }
 	})

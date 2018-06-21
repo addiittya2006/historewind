@@ -1,6 +1,6 @@
 angular.module('homeCtrl', [])
 
-	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'tagFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, tagFilter, morningService, eveningService, event) {
+	.controller('homeCtrl', ['$scope', '$timeout', '$mdDialog', '$mdToast', '$rootScope', 'anchorFilter', 'morningService', 'eveningService', function($scope, $timeout, $mdDialog, $mdToast, $rootScope, amchorFilter, morningService, eveningService, event) {
 
 		// registering serviceWorker
 		if ("serviceWorker" in navigator) {
@@ -19,10 +19,6 @@ angular.module('homeCtrl', [])
 			clickOutsideToClose: false,
 			templateUrl: './src/templates/spinnerDialog.html'
 		});
-		// $('a').attr('href', function(i, href) {
-		// 	console.log(href);
-		// 	return 'https://en.wekipedia.org/' + href;
-		// });
 
 		var months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 		$scope.date = new Date();
@@ -33,7 +29,7 @@ angular.module('homeCtrl', [])
 
 		// between 12AM and 4PM
 		if ( $scope.date.getHours() >= 0 && $scope.date.getHours() < 16) {
-			console.log('morning digest');
+			// console.log('morning digest');
 			morningService.getData(todayDate)
 			.then(function(res, status, header, scope) {
 				$scope.births = res.data.births;
@@ -55,7 +51,7 @@ angular.module('homeCtrl', [])
 				$mdDialog.hide('.spinner');
 			});
 		} else {
-			console.log('evening digest');
+			// console.log('evening digest');
 			eveningService.getData(todayDate)
 			.then(function(res, status, header, scope) {
 				$scope.births = res.data.births;
@@ -80,9 +76,8 @@ angular.module('homeCtrl', [])
 				$rootScope.$broadcast('setDefaultEveningColor', eveningColor);
 				$scope.loaded = true;
 				$mdDialog.hide('.spinner');
-				console.log('spinner stops');
+				// console.log('spinner stops');
 			});
 		}
-
-		console.log(fullTime);
+		// console.log(fullTime);
 	}])

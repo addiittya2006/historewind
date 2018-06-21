@@ -1,6 +1,3 @@
-.toolbar {
-	/*background: blue;*/
-}
 .toolbar span {
 	padding: 5px;
 	height: 40px;
@@ -20,14 +17,7 @@
 	top: 10px;
 	cursor: pointer;
 }
-/* .reloadIcon { */
-	/* position: absolute; */
-	/* right: 40px; */
-	/* top: 10px; */
-/* } */
-/* .reloadIcon:hover { */
-	/* cursor: pointer; */
-/* } */
+
 .todayDate {
 	color: white;
 	font-size: 15px;
