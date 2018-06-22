@@ -5,10 +5,6 @@ angular.module('homeCtrl', [])
 		// registering serviceWorker
 		if ("serviceWorker" in navigator) {
 			navigator.serviceWorker.register("./sw.js")
-				.then(function(registtation) {
-				}).catch(function(err) {
-					console.log(err);
-				});
 		}
 
 		// start spinner

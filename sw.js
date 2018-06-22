@@ -1,5 +1,3 @@
-// serviceWorker install event
-
 var cacheName = "histoCache";
 var fileToCache = [
   "./index.html",
@@ -8,6 +6,7 @@ var fileToCache = [
   "./src/styles/toolbar.css"
 ];
 
+// serviceWorker install event
 self.addEventListener("install",  function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
@@ -17,7 +16,6 @@ self.addEventListener("install",  function(event) {
 });
 
 // serviceWorker fetch event
-
 self.addEventListener("fetch", function(event) {
   event.respondWith(
     caches.match(event.request)

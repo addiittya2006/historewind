@@ -1,5 +1,4 @@
-angular.module('eventDirective', [])
-	
+angular.module('eventDirective', [])	
 	.directive('eventDirective', function() {
 		return {
 			restrict: 'E',

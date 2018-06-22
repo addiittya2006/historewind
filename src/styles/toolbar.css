@@ -3,14 +3,17 @@
 	height: 40px;
 	margin: auto;
 }
+
 .toolbar span img {
 	height: 30px;
-  object-fit: cover;
+	object-fit: cover;
 }
+
 .spacer {
 	-webkit-box-flex: 1;
 	flex: 1 1 auto;
 }
+
 .menuIcon {
 	position: absolute;
 	right: 5px;

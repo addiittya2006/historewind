@@ -1,6 +1,6 @@
 <section>
 	<md-card class="galleryCard" ng-repeat="items in events">
-		<img src={{items.thumb}}>
+		<img ng-src={{items.thumb}} onerror="this.onerror=null;this.src='./res/unavail.jpg'">
 		<md-card-title class="cardTitle">
 			<md-card-title-text class="cardTitleText">
 				<span class="md-headline">{{items.year}}</span>

@@ -1,36 +1,30 @@
-/*html {*/
-/*	background-color: #3F51B5;*/
-/*}*/
-/*html {
-    overflow: hidden;
-    height: 100%;
-}
-
-body {
-    height: 100%;
-    overflow: auto;
-}*/
 body.modal-open {
 	overflow: hidden;
 }
+
 hr {
 	width: 80%;
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
 *:focus {
 	outline: none;
 }
+
 ::-webkit-scrollbar {
 	display: none;
 }
+
 .headingImg img {
 	height: 30px;
 	object-fit: cover;
 }
+
 .spinner {
 	min-width: 20px;
 	padding: 5px;
@@ -40,6 +34,7 @@ hr {
 	-ms-box-shadow: none;
 	box-shadow: none;
 }
+
 .networkErr {
 	min-width: 60%;
 	min-height: 40%;

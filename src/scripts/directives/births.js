@@ -1,5 +1,4 @@
 angular.module('birthDirective', [])
-	
 	.directive('birthDirective', function() {
 		return {
 			restrict: 'E',

@@ -4,19 +4,22 @@ a {
 	font-weight: bolder;
 	font-family: sans-serif;
 }
+
 .gallery {
 	background-color: #3F51B5;
 	text-align: center;
 }
+
 .galleryCard {
 	height: auto;
 	width: auto;
 	max-width: 600px;
 	margin: auto;
-  margin-bottom: 1em;
-  margin-top: 1em;
+	margin-bottom: 1em;
+	margin-top: 1em;
 	border-radius: 3px;
 }
+
 .galleryCard img {
 	background-color: lightblue;
 	width: 100%;
@@ -25,24 +28,29 @@ a {
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
 }
+
 .cardTitle {
 	position: relative;
 	padding: 1em;
 	padding-bottom: 5px;
 	font-family: sans-serif;
 }
+
 .cardTitleText {
 	color: #424242;
 	font-weight: bolder !important;
 }
+
 .cardTitleText span {
 	font-weight: bolder !important;
 }
+
 .cardDesc {
 	padding: 1em;
 	padding-top: 5px;
 	text-align: left;
 }
+
 .cardDesc p {
 	text-align: left;
 }
