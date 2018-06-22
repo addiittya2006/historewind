@@ -96,11 +96,17 @@
 							<img src="./res/header.png"/>
 						</span>
 						<md-menu md-position-mode="target-right target">
-							<ng-md-icon class="menuIcon" ng-click="$mdMenu.open($event)" 	icon="more_vert" style="fill: white" size="24"></ng-md-icon>
-							<md-menu-content width="2" >
+							<ng-md-icon class="menuIcon" ng-click="$mdMenu.open($event)" icon="more_vert" style="fill: white" size="24"></ng-md-icon>
+							<md-menu-content width="3" >
+								<md-menu-item>
+									<md-button aria-label="#CE93D8_color" class="md-fab md-mini" style="background: #CE93D8" ng-click="changeBackground('#CE93D8')"></md-button>
+									<md-button aria-label="#00ACC1_color" class="md-fab md-mini" style="background: #00ACC1" ng-click="changeBackground('#00ACC1')"></md-button>
+									<md-button aria-label="#FBC02D_color" class="md-fab md-mini" style="background: #FBC02D" ng-click="changeBackground('#FBC02D')"></md-button>
+									<md-button aria-label="#8D6E63_color" class="md-fab md-mini	" style="background: #8D6E63" ng-click="changeBackground('#8D6E63')"></md-button>
+								</md-menu-item>
 								<md-menu-item>
 									<md-button ng-click="showModel()">
-										Change Color
+										<i class="material-icons" style="vertical-align:middle; padding-bottom: 3px; font-size: 18px;">copyright</i> License
 									</md-button>
 								</md-menu-item>
 							</md-menu-content>
@@ -121,6 +127,10 @@
 							<img src="./res/deaths.png" class="headingImg"/>
 						</span>
 						<death-directive></death-directive>
+						<hr align="center" style="width: 60%; margin-top: 4em;"/>
+						<div class="lic-attrib">
+							Text is available under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License</a>; additional terms may apply. See <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.
+						</div>
 					</md-content>
 				</div>
 			</div>
@@ -144,11 +154,11 @@
 		<script type="text/javascript" src="./src/scripts/filters/anchorFilter.js"></script>
 
 		<!-- network scripts -->
-		<script 	src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.	js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.	js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-sanitize.js"></script>
 
 		<!-- network styles -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,	400italic">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 	</body>
 </html>

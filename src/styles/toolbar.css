@@ -29,3 +29,14 @@
 	left: 5px;
 	top: 5px;
 }
+
+.licenseDialog {
+	/* max-width: 600px; */
+	padding: 20px;
+	padding-bottom: 50px;
+}
+
+.licbr {
+	margin-top: -1em;
+	margin-bottom: 10px;
+}

@@ -27,25 +27,26 @@ angular.module('toolbarCtrl', [])
 			// $scope.projectData = items;
 			var modalInstance = $mdDialog.show({
 				locals: {datatopass: items},
-				controller: colorDialog,
-				templateUrl: './src/templates/colorDialog.html',
+				controller: licenseDialog,
+				templateUrl: './src/templates/licenseDialog.html',
 				parent: angular.element(document.body),
 				clickOutsideToClose:true,
-				fullscreen: $scope.customFullscreen
 			});
 			modalInstance.then(function(){
 				angular.element( $document[0].body).removeClass('modal-open');
 			}, function() {
 				$('body').removeClass('modal-open');
 			});
-			function colorDialog ($scope, datatopass) {
-				$scope.changeBackground = function(color) {
-					setToolbarColor.css('background', color);
-					setGalleryColor.css('background', color);
-					headColor.setMetaTag({
-						color : color
-					});
-				}
+			function licenseDialog ($scope, datatopass) {
 			}
 		}
+
+		$scope.changeBackground = function(color) {
+			setToolbarColor.css('background', color);
+			setGalleryColor.css('background', color);
+			headColor.setMetaTag({
+				color : color
+			});
+		}
+		
 	}])
