@@ -1,0 +1,7 @@
+[
+    {
+      "origin": ["https://aditya.science/*"],
+      "method": ["GET"],
+      "maxAgeSeconds": 3600
+    }
+]

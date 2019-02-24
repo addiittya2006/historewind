@@ -20,6 +20,19 @@
 		<script type="text/javascript" 	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-aria.min.js"></script>
 		<script type="text/javascript" 	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-messages.min.js"></script>
 
+		<!-- firebase -->
+		<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-storage.js"></script>
+		<script>
+			var config = {
+			  apiKey: "AIzaSyCRv_8yFaOyHylCX3PA3PVBRQ6YxH2p3vY",
+			  authDomain: "historewind.firebaseapp.com",
+			  projectId: "historewind",
+			  storageBucket: "historewind.appspot.com"
+			};
+			firebase.initializeApp(config);
+		  </script>
+
 		<link rel="shortcut icon" type="image/png" href="./res/icons/launcher-icon-1x.png"/>
 
 		<link rel="apple-touch-icon" href="./res/icons/touch/touch-icon-iphone.png">
@@ -154,7 +167,7 @@
 		<script type="text/javascript" src="./src/scripts/filters/anchorFilter.js"></script>
 
 		<!-- network scripts -->
-		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.	js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-sanitize.js"></script>
 
 		<!-- network styles -->

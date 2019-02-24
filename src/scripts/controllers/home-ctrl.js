@@ -23,57 +23,55 @@ angular.module('homeCtrl', [])
 		var phase = 8 < $scope.date.getHours() < 6 ? 'AM' : 'PM';
 		var fullTime = time + ':' + phase;
 
-		// between 12AM and 4PM
-		if ( $scope.date.getHours() >= 0 && $scope.date.getHours() < 16) {
-			// console.log('morning digest');
-			morningService.getData(todayDate)
-			.then(function(res, status, header, scope) {
-				$scope.births = res.data.births;
-				$scope.deaths = res.data.deaths;
-				$scope.events = res.data.events;
-			}, function errorCallback(err) {
-				$timeout(function() {
-					$mdToast.show({
-						hideDelay: 99999999999,
-						templateUrl: './src/templates/networkErrorToast.html',
-						position: 'bottom center',
-						controller: 'networkErrorToastCtrl'
-					})
-				}, 2000);
-				console.log(err);
+		// between 4AM and 4PM
+		if ( $scope.date.getHours() >= 4 && $scope.date.getHours() < 16) {
+			morningService.getDownloadUrl(todayDate).then(function(url) {
+				morningService.getData(url).then(function(res, status, header, scope) {
+					$scope.births = res.data.births;
+					$scope.deaths = res.data.deaths;
+					$scope.events = res.data.events;
+				}, function errorCallback(err) {
+					$timeout(function() {
+						$mdToast.show({
+							hideDelay: 99999999999,
+							templateUrl: './src/templates/networkErrorToast.html',
+							position: 'bottom center',
+							controller: 'networkErrorToastCtrl'
+						})
+					}, 2000);
+					console.log(err);
+				})
+				.finally(function() {
+					$scope.loaded = true;
+					$mdDialog.hide('.spinner');
+				});
 			})
-			.finally(function() {
-				$scope.loaded = true;
-				$mdDialog.hide('.spinner');
-			});
 		} else {
-			// console.log('evening digest');
-			eveningService.getData(todayDate)
-			.then(function(res, status, header, scope) {
-				$scope.births = res.data.births;
-				$scope.deaths = res.data.deaths;
-				$scope.events = res.data.events;
-			}, function errorCallback(err) {
-				$timeout(function() {
-					$mdToast.show({
-						hideDelay: 99999999999,
-						templateUrl: './src/templates/networkErrorToast.html',
-						position: 'bottom center',
-						controller: 'networkErrorToastCtrl'
-					})
-				}, 2000);
-				console.log(err);
+			eveningService.getDownloadUrl(todayDate).then(function(url) {
+				eveningService.getData(url).then(function(res, status, header, scope) {
+					$scope.births = res.data.births;
+					$scope.deaths = res.data.deaths;
+					$scope.events = res.data.events;
+				}, function errorCallback(err) {
+					$timeout(function() {
+						$mdToast.show({
+							hideDelay: 99999999999,
+							templateUrl: './src/templates/networkErrorToast.html',
+							position: 'bottom center',
+							controller: 'networkErrorToastCtrl'
+						})
+					}, 2000);
+					console.log(err);
+				})
+				.finally(function() {
+					var eveningColor = {
+						"color" : "#9E9E9E"
+					}
+					$rootScope.$broadcast('setDefaultEveningColor', eveningColor);
+					$scope.loaded = true;
+					$mdDialog.hide('.spinner');
+				});
 			})
-			.finally(function() {
-				var eveningColor = {
-					"color" : "#9E9E9E"
-				}
-				// console.log(eveningColor.color);
-				$rootScope.$broadcast('setDefaultEveningColor', eveningColor);
-				$scope.loaded = true;
-				$mdDialog.hide('.spinner');
-				// console.log('spinner stops');
-			});
 		}
-		// console.log(fullTime);
-	}])
+	}
+])
