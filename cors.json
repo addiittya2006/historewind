@@ -1,6 +1,6 @@
 [
     {
-      "origin": ["https://aditya.science/*"],
+      "origin": ["https://adee.dev/*"],
       "method": ["GET"],
       "maxAgeSeconds": 3600
     }
